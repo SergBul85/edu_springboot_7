@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Pupil Form</title>
+</head>
+<body>
+
+<h2>Pupil form</h2>
+<br><br>
+
+<form th:action="@{/processPupilForm}" th:object="${pupil}" method="post">
+    First name: <input type="text" th:field="*{firstName}"/>
+    <br><br>
+    Last name: <input type="text" th:field="*{lastName}"/>
+    <br><br>
+    <select th:field="*{sex}">
+        <option th:value="Boy">Boy</option>
+        <option th:value="Girl">Girl</option>
+    </select>
+
+    <br><br>
+    <input type="submit" value="Submit">
+</form>
+
+
+</body>
+</html>
